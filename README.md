@@ -23,9 +23,10 @@
 
 
 本声库在开发过程中使用了以下公开与非公开数据库作为增强数据：
--  (Natsume Yuuri)[https://ksdcm1ng.wixsite.com/njksofficial]
--  (Millefeuille French DiffSinger Language Support)[https://github.com/imsupposedto/Millefeuille-DiffSinger-French]
--  Peiton by NebulaMeadow
+-  [Natsume Yuuri](https://ksdcm1ng.wixsite.com/njksofficial)
+-  [Millefeuille French DiffSinger Language Support](https://github.com/imsupposedto/Millefeuille-DiffSinger-French)
+-  [NebulaMeadow](https://x.com/NebulaMeadow)
+
 对以上数据库的使用均已经过相应权利人的授权。
 
 
