@@ -22,6 +22,13 @@
 
 
 
+本声库在开发过程中使用了以下公开与非公开数据库作为增强数据：
+-  (Natsume Yuuri)[https://ksdcm1ng.wixsite.com/njksofficial]
+-  (Millefeuille French DiffSinger Language Support)[https://github.com/imsupposedto/Millefeuille-DiffSinger-French]
+-  Peiton by NebulaMeadow
+对以上数据库的使用均已经过相应权利人的授权。
+
+
 管理人与联系方式
 =====
 本歌声合成模型的管理人为幽寂和Vivi 。对于本使用协议中涉及到征得管理人同意的条目，联系两人之一即可。
