@@ -29,7 +29,7 @@ https://github.com/stakira/OpenUtau
 
 Voice Provider: UG (SnowbootP, tuskinekinase)
 
-Data processing: Hisaka (hrukalive)
+Data processing: Hisaka ([hrukalive](https://github.com/hrukalive))
 
 Data labeling: UG, Hisaka
 
