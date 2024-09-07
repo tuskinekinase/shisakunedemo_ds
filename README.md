@@ -173,6 +173,7 @@ English (GenAm)
 |	NG	|	en	|	ŋ	|
 |	P	|	en	|	p	|
 |	R	|	en	|	r	|
+|	s	|	zh/ja/en/fr	|	s	|
 |	SH	|	en	|	ʃ	|
 |	T	|	en	|	t	|
 |	TH	|	en	|	θ	|
