@@ -133,7 +133,7 @@ Mandarin Chinese
 |	s	|	zh/ja/en/fr	|	s	|
 |	sh	|	zh	|	sh	|
 |	t	|	zh	|	t	|
-|	w	|	zh	|	w	|
+| w | zh/ja | w |
 |	x	|	zh	|	x	|
 |	y	|	zh	|	y	|
 |	z	|	zh	|	z	|
@@ -204,6 +204,7 @@ Japanese
 |	n	|	zh/ja	|	n (consonant)    |
 |	p1	|	ja	|	p	|
 |	t1	|	ja	|	t	|
+| w | zh/ja | w |
 |	V	|	ja	|	v	|
 |	y1	|	ja	|	y	|
 |	z1	|	ja	|	z	|
