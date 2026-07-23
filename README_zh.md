@@ -132,7 +132,7 @@ https://github.com/stakira/OpenUtau
 |	s	|	zh/ja/en/fr	|	s	|
 |	sh	|	zh	|	sh	|
 |	t	|	zh	|	t	|
-|	w	|  zh/ja  |	w	|
+| w | zh/ja | w |
 |	x	|	zh	|	x	|
 |	y	|	zh	|	y	|
 |	z	|	zh	|	z	|
@@ -204,7 +204,7 @@ https://github.com/stakira/OpenUtau
 |	p1	|	ja	|	p	|
 |	t1	|	ja	|	t	|
 |	V	|	ja	|	v	|
-|  w  |  zh/ja  |  w  |
+| w | zh/ja | w |
 |	y1	|	ja	|	y	|
 |	z1	|	ja	|	z	|
 |	ch1	|	ja	|	ch	|
