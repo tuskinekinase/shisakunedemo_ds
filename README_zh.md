@@ -146,10 +146,10 @@ https://github.com/stakira/OpenUtau
 |	AH	|	en	|	ʌ	|
 |	AO	|	en	|	ɔ	|
 |	AW	|	en	|	aʊ	|
-|	AX	|	en	|	ɚ	|
+|	AX	|	en	|	ə	|
 |	AY	|	en	|	aɪ	|
 |	EH	|	en	|	ɛ	|
-|	ER	|	en	|	ər	|
+|	ER	|	en	|	ɚ	|
 |	EY	|	en	|	eɪ	|
 |	IH	|	en	|	ɪ	|
 |	IY	|	en	|	i	|
