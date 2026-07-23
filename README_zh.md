@@ -172,10 +172,12 @@ https://github.com/stakira/OpenUtau
 |	NG	|	en	|	ŋ	|
 |	P	|	en	|	p	|
 |	R	|	en	|	r	|
+|	s	|	zh/ja/en/fr	|	s	|
 |	SH	|	en	|	ʃ	|
 |	T	|	en	|	t	|
 |	TH	|	en	|	θ	|
 |	TR	|	en	|	tr	|
+|  v  |  en  |  v  |
 |	W	|	en	|	w	|
 |	Y	|	en	|	j	|
 |	Z	|	en	|	z	|
