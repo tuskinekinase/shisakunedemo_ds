@@ -147,10 +147,10 @@ English (GenAm)
 |	AH	|	en	|	ʌ	|
 |	AO	|	en	|	ɔ	|
 |	AW	|	en	|	aʊ	|
-|	AX	|	en	|	ɚ	|
+|	AX	|	en	|	ə	|
 |	AY	|	en	|	aɪ	|
 |	EH	|	en	|	ɛ	|
-|	ER	|	en	|	ər	|
+|	ER	|	en	|	ɚ	|
 |	EY	|	en	|	eɪ	|
 |	IH	|	en	|	ɪ	|
 |	IY	|	en	|	i	|
@@ -178,6 +178,7 @@ English (GenAm)
 |	T	|	en	|	t	|
 |	TH	|	en	|	θ	|
 |	TR	|	en	|	tr	|
+|  v  |  en  |  v  |
 |	W	|	en	|	w	|
 |	Y	|	en	|	j	|
 |	Z	|	en	|	z	|
