@@ -11,7 +11,7 @@ About OpenUtau：
 
 https://www.openutau.com/
 
-https://github.com/stakira/OpenUtau
+https://github.com/openutau/OpenUtau
 
 ## User Manual
 
@@ -24,7 +24,11 @@ https://github.com/stakira/OpenUtau
 #### Track Setup
 
 1.  In OpenUtau's multitrack view, select the installed Shisakune Demo DiffSinger model as the active singer.
-2.  Select DIFFS as the active phonemizer. Shisakune Demo DiffSinger uses a custom dictionary that comes with the model package, which is only supported by DIFFS.
+2.  Select one of the following as the active phonemizer:
+	1. DIFFS ZH (Mandarin Chinese)
+	2. DIFFS EN (English)
+	3. DIFFS JA (Japanese)
+	4. DIFFS (a mixed dictionary that contains Mandarin Chinese, English and Japanese. Supports Pinyin, English and hiragana input.)
 3.  Select DiffSinger as the active engine.
 
 Click on the selected track to create a new part. Double-click on the part on the selected track to open the piano roll interface.
@@ -35,12 +39,12 @@ The way to use DiffSinger model in OpenUtau is similar to using UTAU voicebank i
 ##### Expressions
 Expression (parameters) panel is located at the bottom of the piano roll window. Switch active expressions and edit expression settings in the lower left corner. Between the piano roll window and the expressions panel is the phoneme panel, where you can drag to edit honeme length, start position, and edit phoneme names.
 
-Shisakune Demo DiffSinger 3.0 and later versions support the following option parameters:
+Shisakune Demo DiffSinger 4.5 and later versions support the following option parameters:
 |Name|Abbrv.|Description|Options|Default|
 |---|---|---|---|---|
-|voice color|CLR|Switch to a different voice color on a per-phoneme basis|Smooth、Solid、Symphonic|Smooth|	
+|voice color|CLR|Switch to a different voice color on a per-phoneme basis|Smooth, Solid, Symphonic|Smooth|	
 
-Shisakune Demo DiffSinger 3.0 and later versions support the following curve parameters：
+Shisakune Demo DiffSinger 4.5 and later versions support the following curve parameters：
 |Name|Abbrv.|Description|Range|Default|
 |---|---|---|---|---|
 |dynamics(curve)|DYN|Volume control. The range corresponds to -24dB~12dB.|-240~120|0|
@@ -48,220 +52,184 @@ Shisakune Demo DiffSinger 3.0 and later versions support the following curve par
 |pitch deviation(curve)|PIT|Pitch deviation. Can be drawn directly in the piano roll window using Pitch Tool|-1200~1200|0|
 |gender(curve)|GENC|Gender parameter control.|-100~100|0|
 |breathiness(curve)|BREC|Breathiness control.|-100~100|0|
-|tension(curve)|TENC|Tension. Not compatible with VOIC in the same model package. Please refer to the model file name.|-100~100|0|
-|voicing(curve)|VOIC|Voicing. Not compatible with TENC in the same model package. Please refer to the model file name.|0~200(The default maximum range is 100, you can click on the gear in the lower left corner to set custom range)|100|
+|tension(curve)|TENC|Tension.|-100~100|0|
+|voicing(curve)|VOIC|Voicing.|0~200(The default maximum range is 100, you can click on the gear in the lower left corner to set custom range)|100|
 |voice color smooth|CL01|Smooth (default) voice color control. Use in tandem with CLR.|0-100|0|
 |voice color solid|CL02|Solid voice color control. Use in tandem with CLR.|0-100|0|
 |voice color symphonic|CL03|Symphonic (operatic) voice color control. Use in tandem with CLR.|0-100|0|
 
 ##### Automatic Pitch
-Shisakune Demo DiffSinger 3.0 and later versions support automatic pitch. Select the notes to be rendered, then, in the Batch Edits menu, select Notes->Load rendered pitch to render automatic pitch.
+Shisakune Demo DiffSinger 4.5 and later versions support automatic pitch. Select the notes to be rendered, then, in the Batch Edits menu, select Notes->Load rendered pitch to render automatic pitch.
 > DiffSinger's automatic pitch rendering is based on a per sentence basis. Sentences are note segments with continuously connected phonemes. If you only select some notes in a sentence for automatic pitch rendering, the pitch of the entire sentence will be re-rendered.
 
 #### Multilingual Synthesis
-In Shisakune Demo DiffSinger 3.1 and later versions, the Native versions can synthesize Mandarin Chinese and English, while the Multi versions can synthesize Mandarin Chinese, English, Japanese and French. Please refer to the model file name for the applicable languages.
-
-The default language is Mandarin Chinese.
+Shisakune Demo DiffSinger 4.5 and later versions support the synthesis of Mandarin Chinese, English and Japanese. You can either use the DIFFS ZH/DIFFS EN/DIFFS JA phonemizers from OpenUtau v0.1.565 and later, or our built-in DIFFS mixed phonemizer to synthesize all three languages in the same track.
 
 Recommended lyrics input method:
-- Chinese: Pinyin (recommended), Chinese characters
-- English: English spelling. Note: When English and Pinyin spelling conflict, Pinyin takes precedence. Use EN+English spelling to call out English phonemes. (Example: sing, ENsong)
-> In versions 3.1 and later, some English words support multiple pronunciations, which can be called up through the (1) suffix. (Example: record(1))
-- Japanese (not supported in some versions): Hiragana
-- French (not supported in some versions): FR+French spelling (Example: FRchanter)
+- Chinese (DIFFS ZH): Pinyin (recommended), Chinese characters
+- English (DIFFS EN): English spelling. Note: When English and Pinyin spelling conflict, Pinyin takes precedence. Use EN+English spelling to call out English phonemes. (Example: sing, ENsong)
+> some English words support multiple pronunciations, which can be called up through the (1) suffix. (Example: record(1))
+- Japanese (DIFFS JA): Hiragana, Romaji
+- Mixed (DIFFS): Words from all three phonemizers in the same fusion dictionary. 
+	- When using the DIFFS mixed phonemizer, only hiragana input is supported for Japanese. When English and Pinyin spelling conflict, Pinyin takes precedence. Use EN prefix to call out English phonemes for words in conflict with Pinyin spelling. (Example: sing, ENsong)
+>In the DIFFS mized phonemizer, phonemes of all languages ​​coexist in a fusion dictionary, which can be directly accessed by entering phonemes in "[]". (Example: [en/s en/ih en/ng])
 
-Phonemes of all languages ​​coexist in a fusion dictionary, which can be directly accessed by entering phonemes in "[]". (Example: [s IH NG])
+##### DIFFS Phoneme Guide
+Mandarin Chinese (ZH)
+|	Phoneme label	|	Pinyin	|
+|	---	|	---	|
+|	zh/a	|	a	|	 
+|	zh/ai	|	ai	|
+|	zh/an	|	an	|
+|	zh/ang	|	ang	|
+|	zh/ao	|	ao	|
+|	zh/b	|	b	|
+|	zh/c	|	c	|
+|	zh/ch	|	ch	|
+|	zh/d	|	d	|
+|	zh/e	|	e	|
+|	zh/ei	|	ei	|
+|	zh/en	|	en	|
+|	zh/ueng	|	(w)eng	|
+|	zh/eng	|	eng	|
+|	zh/er	|	er	|
+|	zh/f	|	f	|
+|	zh/g	|	g	|
+|	zh/h	|	h	|
+|	zh/i	|	i	|
+|	zh/i0	|	i0	|
+|	zh/ia	|	ia	|
+|	zh/ian	|	ian	|
+|	zh/iang	|	iang	|
+|	zh/iao	|	iao	|
+|	zh/ie	|	ie	|
+|	zh/in	|	in	|
+|	zh/ing	|	ing	|
+|	zh/io	|	(y)o	|
+|	zh/iong	|	iong	|
+|	zh/ir	|	(zh/ch/sh/r)i	|
+|	zh/iu	|	iu	|
+|	zh/j	|	j	|
+|	zh/k	|	k	|
+|	zh/l	|	l	|
+|	zh/m	|	m	|
+|	zh/n	|	n	|
+|	zh/o	|	o	|
+|	zh/ong	|	ong	|
+|	zh/ou	|	ou	|
+|	zh/p	|	p	|
+|	zh/q	|	q	|
+|	zh/r	|	r	|
+|	zh/s	|	s	|
+|	zh/sh	|	sh	|
+|	zh/t	|	t	|
+|	zh/u	|	u	|
+|	zh/ua	|	ua	|
+|	zh/uai	|	uai	|
+|	zh/uan	|	uan	|
+|	zh/uang	|	uang	|
+|	zh/ui	|	ui	|
+|	zh/un	|	un	|
+|	zh/uo	|	uo	|
+|	zh/v	|	ü	|
+|	zh/van	|	üan	|
+|	zh/ve	|	üe	|
+|	zh/vn	|	ün	|
+|	zh/w	|	w	|
+|	zh/x	|	x	|
+|	zh/y	|	y	|
+|	zh/y0	|	y(ü)	|
+|	zh/z	|	z	|
+|	zh/zh	|	zh	|
 
-##### Phoneme Guide
-Mandarin Chinese
-|	Phoneme label	|	Language	|	Pinyin	|
-|	---	|	---	|	---	|
-|	E	|	zh	|	Vowel part of "ye"|
-|	En	|	zh	|	Vowel part of "yan"|
-|	a	|	zh	|	a	|
-|	ai	|	zh	|	ai	|
-|	an	|	zh	|	an	|
-|	ang	|	zh	|	ang	|
-|	ao	|	zh	|	ao	|
-|	e	|	zh	|	e	|
-|	ei	|	zh	|	ei	|
-|	en	|	zh	|	en	|
-|	eng	|	zh	|	eng	|
-|	er	|	zh	|	er	|
-|	i	|	zh	|	i	|
-|	i0	|	zh	|	i0	|
-|	ia	|	zh	|	ia	|
-|	ian	|	zh	|	ian	|
-|	iang	|	zh	|	iang	|
-|	iao	|	zh	|	iao	|
-|	ie	|	zh	|	ie	|
-|	in	|	in	|	in	|
-|	ing	|	zh	|	ing	|
-|	iong	|	zh	|	iong	|
-|	ir	|	zh	|	ir	|
-|	iu	|	zh	|	iu	|
-|	o	|	zh	|	o	|
-|	ong	|	zh	|	ong	|
-|	ou	|	zh	|	ou	|
-|	u	|	zh	|	u	|
-|	ua	|	zh	|	ua	|
-|	uai	|	zh	|	uai	|
-|	uan	|	zh	|	uan	|
-|	uang	|	zh	|	uang	|
-|	ui	|	zh	|	ui	|
-|	un	|	zh	|	un	|
-|	uo	|	zh	|	uo	|
-|	v	|	zh	|	ü	|
-|	van	|	zh	|	üan	|
-|	ve	|	zh	|	üe	|
-|	vn	|	zh	|	ün	|
-|	b	|	zh	|	b	|
-|	c	|	zh	|	c	|
-|	ch	|	zh	|	ch	|
-|	d	|	zh	|	d	|
-|	f	|	zh/ja/en/fr	|	f	|
-|	g	|	zh	|	g	|
-|	h	|	zh	|	h	|
-|	j	|	zh	|	j	|
-|	k	|	zh	|	k	|
-|	l	|	zh	|	l	|
-|	m	|	zh/ja/en/fr	|	m	|
-|	n	|	zh	|	n	|
-|	p	|	zh	|	p	|
-|	q	|	zh	|	q	|
-|	r	|	zh	|	r	|
-|	s	|	zh/ja/en/fr	|	s	|
-|	sh	|	zh	|	sh	|
-|	t	|	zh	|	t	|
-| w | zh/ja | w |
-|	x	|	zh	|	x	|
-|	y	|	zh	|	y	|
-|	z	|	zh	|	z	|
-|	zh	|	zh	|	zh	|
+English (EN)
+|	Phoneme label	|	IPA	|
+|	---	|	---	|
+|	en/\_r	|	(t)r, (d)r	|
+|	en/aa	|	ɑ	|
+|	en/ae	|	æ	|
+|	en/ah	|	ʌ	|
+|	en/ao	|	ɔ	|
+|	en/aw	|	aʊ	|
+|	en/ax	|	ə	|
+|	en/ay	|	aɪ	|
+|	en/b	|	b	|
+|	en/ch	|	tʃ, t(r)	|
+|	en/d	|	d	|
+|	en/dh	|	ð	|
+|	en/dx	|	ɾ	|
+|	en/eh	|	ɛ	|
+|	en/er	|	ɚ	|
+|	en/ey	|	eɪ	|
+|	en/f	|	f	|
+|	en/g	|	g	|
+|	en/hh	|	h	|
+|	en/ih	|	ɪ	|
+|	en/iy	|	i	|
+|	en/jh	|	dʒ, d(r)	|
+|	en/k	|	k	|
+|	en/l	|	l	|
+|	en/m	|	m	|
+|	en/n	|	n	|
+|	en/ng	|	ŋ	|
+|	en/ow	|	oʊ	|
+|	en/oy	|	ɔɪ	|
+|	en/p	|	p	|
+|	en/r	|	r	|
+|	en/s	|	s	|
+|	en/sh	|	ʃ	|
+|	en/t	|	t	|
+|	en/th	|	θ	|
+|	en/uh	|	ʊ	|
+|	en/uw	|	u	|
+|	en/v	|	v	|
+|	en/w	|	w	|
+|	en/y	|	j	|
+|	en/z	|	z	|
+|	en/zh	|	ʒ	|
 
-English (GenAm)
-|	Phoneme label	|	Language	|	IPA	|
-|	---	|	---	|	---	|
-|	AA	|	en	|	ɑ	|
-|	AE	|	en	|	æ	|
-|	AH	|	en	|	ʌ	|
-|	AO	|	en	|	ɔ	|
-|	AW	|	en	|	aʊ	|
-|	AX	|	en	|	ə	|
-|	AY	|	en	|	aɪ	|
-|	EH	|	en	|	ɛ	|
-|	ER	|	en	|	ɚ	|
-|	EY	|	en	|	eɪ	|
-|	IH	|	en	|	ɪ	|
-|	IY	|	en	|	i	|
-|	OW	|	en	|	oʊ	|
-|	OY	|	en	|	ɔɪ	|
-|	UH	|	en	|	ʊ	|
-|	UW	|	en	|	u	|
-|	B	|	en	|	b	|
-|	CH	|	en	|	tʃ	|
-|	D	|	en	|	d	|
-|	DH	|	en	|	ð	|
-|	DX	|	en	|	ɾ	|
-|	DR	|	en	|	dr	|
-|	f	|	zh/ja/en/fr	|	f	|
-|	HH	|	en/ja	|	h	|
-|	JH	|	en	|	dʒ	|
-|	L	|	en	|	l	|
-|	m	|	zh/ja/en/fr	|	m	|
-|	N	|	en	|	n	|
-|	NG	|	en	|	ŋ	|
-|	P	|	en	|	p	|
-|	R	|	en	|	r	|
-|	s	|	zh/ja/en/fr	|	s	|
-|	SH	|	en	|	ʃ	|
-|	T	|	en	|	t	|
-|	TH	|	en	|	θ	|
-|	TR	|	en	|	tr	|
-|  v  |  en  |  v  |
-|	W	|	en	|	w	|
-|	Y	|	en	|	j	|
-|	Z	|	en	|	z	|
-|	ZH	|	en	|	ʒ	|
-
-Japanese
-|	Phoneme label	|	Language	|	Romaji	|
-|	---	|	---	|	---	|
-|	A	|	ja	|	a	|
-|	I	|	ja	|	i	|
-|	U	|	ja	|	u	|
-|	E1	|	ja	|	e	|
-|	O	|	ja	|	o	|
-|	I.	|	ja	|	i (devoiced)	|
-|	U.	|	ja	|	u (devoiced)	|
-|	b1	|	ja	|	b	|
-|	d1	|	ja	|	d	|
-|	G	|	ja	|	g	|
-|	HH	|	en/ja	|	h	|
-|	J	|	ja	|	j	|
-|	K	|	ja	|	k	|
-|	m	|	zh/en/ja/fr	|	m	|
-|	n	|	zh/ja	|	n (consonant)    |
-|	p1	|	ja	|	p	|
-|	t1	|	ja	|	t	|
-| w | zh/ja | w |
-|	V	|	ja	|	v	|
-|	y1	|	ja	|	y	|
-|	z1	|	ja	|	z	|
-|	ch1	|	ja	|	ch	|
-|	F	|	ja	|	f	|
-|	r1	|	ja	|	r	|
-|	s	|	zh/en/ja/fr	|	s	|
-|	sh1	|	ja	|	sh	|
-|	ts	|	ja	|	ts	|
-|	nn	|	ja	|	n (moraic)	|
-|	ky	|	ja	|	ky	|
-|	gy	|	ja	|	gy	|
-|	ty	|	ja	|	ty	|
-|	dy	|	ja	|	dy	|
-|	hy	|	ja	|	hy	|
-|	by	|	ja	|	by	|
-|	my	|	ja	|	my	|
-|	ny	|	ja	|	ny	|
-|	py	|	ja	|	py	|
-|	ry	|	ja	|	ry	|
-
-French
-|	Phoneme label	|	Language	|	IPA	|
-|	---	|	---	|	---	|
-|	ah4	|	fr	|	a/ɑ	|
-|	eh4	|	fr	|	e	|
-|	ae4	|	fr	|	ɛ/ɛ:	|
-|	ee	|	fr	|	ə/ø	|
-|	oe	|	fr	|	œ	|
-|	ih4	|	fr	|	i	|
-|	oh	|	fr	|	o	|
-|	oo	|	fr	|	ɔ	|
-|	ou4	|	fr	|	u	|
-|	uh4	|	fr	|	y	|
-|	en4	|	fr	|	ɑ̃	|
-|	in4	|	fr	|	ɛ̃/œ̃	|
-|	un4	|	fr	|	œ̃	|
-|	on4	|	fr	|	ɔ̃	|
-|	uy	|	fr	|	ɥ	|
-|	b4	|	fr	|	b	|
-|	d4	|	fr	|	d	|
-|	f	|	zh/en/fr	|	f	|
-|	g4	|	fr	|	g	|
-|	k4	|	fr	|	k	|
-|	l4	|	fr	|	l	|
-|	m	|	zh/en/ja/fr	|	m	|
-|	n4	|	fr	|	n	|
-|	p4	|	fr	|	p	|
-|	r4	|	fr	|	ʁ	|
-|	s	|	zh/en/ja/fr	|	s	|
-|	t4	|	fr	|	t	|
-|	v4	|	fr	|	v	|
-|	j4	|	fr	|	ʒ	|
-|	y4	|	fr	|	j	|
-|	w4	|	fr	|	w	|
-|	ng4	|	fr	|	ŋ	|
-|	rx	|	fr	|	r	|
+Japanese (JA)
+|	Phoneme label	|	Romaji	|
+|	---	|	---	|
+|	ja/a	|	a	|
+|	ja/b	|	b	|
+|	ja/by	|	by	|
+|	ja/ch	|	ch	|
+|	ja/d	|	d	|
+|	ja/dy	|	dy	|
+|	ja/e	|	e	|
+|	ja/f	|	f	|
+|	ja/F	|	f (ɸ)	|
+|	ja/g	|	g	|
+|	ja/gy	|	gy	|
+|	ja/h	|	h	|
+|	ja/hy	|	hy	|
+|	ja/I	|	i (devoiced)	|
+|	ja/i	|	i	|
+|	ja/j	|	j	|
+|	ja/k	|	k	|
+|	ja/ky	|	ky	|
+|	ja/m	|	m	|
+|	ja/my	|	my	|
+|	ja/N	|	n (moraic)	|
+|	ja/n	|	n (consonant)	|
+|	ja/ny	|	ny	|
+|	ja/o	|	o	|
+|	ja/p	|	p	|
+|	ja/py	|	py	|
+|	ja/r	|	r	|
+|	ja/ry	|	ry	|
+|	ja/s	|	s	|
+|	ja/sh	|	sh	|
+|	ja/t	|	t	|
+|	ja/ts	|	ts	|
+|	ja/ty	|	ty	|
+|	ja/U	|	u (devoiced)	|
+|	ja/u	|	u	|
+|	ja/v	|	v	|
+|	ja/w	|	w	|
+|	ja/y	|	y	|
+|	ja/z	|	z	|
 
 Special symbols:
 - SP (Space)
@@ -284,7 +252,6 @@ Splash art: UG
 
 The following public and private databases were used as augment data during the development of this model:
 -  [Natsume Yuuri](https://ksdcm1ng.wixsite.com/njksofficial)
--  [Millefeuille French DiffSinger Language Support](https://github.com/imsupposedto/Millefeuille-DiffSinger-French)
 -  [NebulaMeadow](https://x.com/NebulaMeadow)
 
 The use of the above databases has been authorized by the corresponding rights holders.
