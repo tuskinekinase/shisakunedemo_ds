@@ -1,5 +1,7 @@
 # 试作音Demo DiffSinger
 
+[English](https://github.com/tuskinekinase/shisakunedemo_ds/blob/main/README.md) | 中文
+
 ## 介绍
 试作音Demo（席黛墨）DiffSinger是基于DiffSinger歌声合成技术的高质量多音色AI歌声合成模型。可配合OpenUtau使用。
 
