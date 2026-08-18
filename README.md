@@ -1,5 +1,7 @@
 # Shisakune Demo DiffSinger
 
+English | [中文](https://github.com/tuskinekinase/shisakunedemo_ds/blob/main/README_zh.md)
+
 ## Introduction
 Shisakune Demo (also known as: 试作音デモ, 试作音Demo, 席黛墨) DiffSinger is a high-quality AI singing voice synthesizing model based on DiffSinger. This model uses OpenUtau as renderer.
 
